@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="consumer">
+            <graphics>
+                <position x="825.0" y="255.0"/>
+            </graphics>
+            <name>
+                <value>consumer</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="free">
+            <graphics>
+                <position x="135.0" y="270.0"/>
+            </graphics>
+            <name>
+                <value>free</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="producer">
+            <graphics>
+                <position x="285.0" y="270.0"/>
+            </graphics>
+            <name>
+                <value>producer</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="product">
+            <graphics>
+                <position x="495.0" y="255.0"/>
+            </graphics>
+            <name>
+                <value>product</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="wait">
+            <graphics>
+                <position x="645.0" y="255.0"/>
+            </graphics>
+            <name>
+                <value>wait</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="T0">
+            <graphics>
+                <position x="210.0" y="180.0"/>
+            </graphics>
+            <name>
+                <value>T0</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T2">
+            <graphics>
+                <position x="210.0" y="375.0"/>
+            </graphics>
+            <name>
+                <value>T2</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T4">
+            <graphics>
+                <position x="735.0" y="135.0"/>
+            </graphics>
+            <name>
+                <value>T4</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T5">
+            <graphics>
+                <position x="735.0" y="360.0"/>
+            </graphics>
+            <name>
+                <value>T5</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="consumer to T5" source="consumer" target="T5">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="827" y="278" curvePoint="false"/>
+            <arcpath id="001" x="751" y="372" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="free to T0" source="free" target="T0">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="156" y="270" curvePoint="false"/>
+            <arcpath id="001" x="216" y="192" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="producer to T2" source="producer" target="T2">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="288" y="294" curvePoint="false"/>
+            <arcpath id="001" x="227" y="382" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="product to T4" source="product" target="T4">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="520" y="259" curvePoint="false"/>
+            <arcpath id="001" x="742" y="142" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T0 to producer" source="T0" target="producer">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="226" y="192" curvePoint="false"/>
+            <arcpath id="001" x="287" y="270" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T2 to product" source="T2" target="product">
+            <graphics/>
+            <inscription>
+                <value>Default,5</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="226" y="392" curvePoint="false"/>
+            <arcpath id="001" x="493" y="273" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T4 to consumer" source="T4" target="consumer">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="751" y="147" curvePoint="false"/>
+            <arcpath id="001" x="828" y="254" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T5 to free" source="T5" target="free">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="741" y="377" curvePoint="false"/>
+            <arcpath id="001" x="162" y="477" curvePoint="false"/>
+            <arcpath id="002" x="148" y="296" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T5 to wait" source="T5" target="wait">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="742" y="367" curvePoint="false"/>
+            <arcpath id="001" x="666" y="278" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="wait to T4" source="wait" target="T4">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="665" y="254" curvePoint="false"/>
+            <arcpath id="001" x="741" y="152" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
